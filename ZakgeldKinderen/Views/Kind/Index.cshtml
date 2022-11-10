@@ -1,0 +1,36 @@
+﻿@model List<Kinderen>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Kinderen</h1>
+@*<form asp-action="Index" method="post">
+    <label asp-for="Naam"></label>
+    <input asp-for="Naam" />
+    <label asp-for="Zakgeld"></label>
+    <input asp-for="Zakgeld" />
+    <input type="submit" value="Toevoegen" />
+</form>*@
+
+<table>
+    <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Zakgeld</th>
+            <th>Verwijderen</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kind in Model){
+        <tr>
+            
+                <td>@kind.Naam</td>
+                <td>@kind.Zakgeld</td>
+                <td>
+                    <a asp-action="VerwijderKind" asp-route-naam="@kind.Naam"><img src="~/images/delete.png" alt="delete" /></a>
+                </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,17 @@
+﻿@model Kind?
+
+@{
+    ViewBag.Title = "Verwijderen";
+}
+@if (Model is null)
+{
+        <h2>Er bestaat geen kind met nummer @ViewBag.kindnummer.</h2>
+        <h3>Terug naar de <a href="~/kind">lijst</a></h3>
+}
+else
+{
+        <h2>@Model.Naam verwijderen?</h2>
+        <form method="post" action="~/kind/delete/@Model.Id">
+            <input type="submit" value="delete" />
+        </form>
+}

@@ -1,0 +1,13 @@
+﻿@model Kind
+@{
+    ViewData["Title"] = "Toevoegen";
+}
+
+<h2>Persoon toevoegen</h2>
+<form asp-action="Toevoegen" method="post">
+    <label asp-for="Naam"></label>
+    <input asp-for="Naam" />
+    <label asp-for="Zakgeld"></label>
+    <input asp-for="Zakgeld" />
+    <input type="submit" value="Toevoegen" />
+</form>

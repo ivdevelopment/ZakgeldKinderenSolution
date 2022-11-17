@@ -1,4 +1,4 @@
-﻿@model List<Kinderen>
+﻿@model List<Kind>
 @{
     ViewData["Title"] = "Index";
 }
@@ -27,10 +27,11 @@
                 <td>@kind.Naam</td>
                 <td>@kind.Zakgeld</td>
                 <td>
-                    <a asp-action="VerwijderKind" asp-route-naam="@kind.Naam"><img src="~/images/delete.png" alt="delete" /></a>
+                    <a asp-action="VerwijderKind" asp-route-id="@kind.Id"><img src="~/images/delete.png" alt="delete" /></a>
                 </td>
         </tr>
         }
     </tbody>
 </table>
+<a asp-action="Toevoegen" class="btn btn-primary">Persoon toevoegen</a>
 
